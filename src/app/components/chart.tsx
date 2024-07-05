@@ -8,9 +8,9 @@ export interface PrefData {
 }
 
 
-const LineChartComponent = (Datas:PrefData[]) => {
-    const PrefDatas = Object.values(Datas); 
 
+const LineChartComponent = ({Datas}:{Datas:PrefData[]}) => {
+    const colors = ["#ff0000","#00ff00","#ff00ff","#0000ff","#0f0f0f"]; 
     //人口の数字に,をつけて見やすくする
     const formatNumber = (num: number) => {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -25,10 +25,8 @@ const LineChartComponent = (Datas:PrefData[]) => {
                 <Tooltip formatter={(value: number) => formatNumber(value)} />
                 <Legend />
 
-                {PrefDatas?.map((e) => (
-                    e.map(({prefCode,data,prefName})=>(
-                        <Line key={prefCode} type="monotone" dataKey="value" data={data} name={prefName} stroke="#000" />
-                    ))
+                {Datas?.map(({prefCode,prefName,data}:PrefData,index:number) => (
+                    <Line key={prefCode} type="monotone" dataKey="value" data={data} name={prefName} stroke={colors[index]} />
                 ))}
             </LineChart>
         </ResponsiveContainer>
