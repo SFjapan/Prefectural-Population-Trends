@@ -42,9 +42,10 @@ export default function Home() {
             <Header />
             <Prefectures onChange={handleCheckboxChange}>
             </Prefectures>
+            <p className="alert">{alert}</p>
             <LineChartComponent Datas={prefectures}>
             </LineChartComponent>
-            <p className="alert">{alert}</p>
+            
         </main>
     );
 }
