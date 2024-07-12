@@ -49,6 +49,7 @@ const Prefectures: React.FC<PrefecturesProps> = ({ onChange }) => {
           <input
             type="checkbox"
             id={prefecture.prefName}
+            data-testid={prefecture.prefName}
             value={prefecture.prefCode}
             onChange={(e) =>
               handleCheckboxChange(Number(e.target.value), (String)(e.target.id), e.target.checked)
