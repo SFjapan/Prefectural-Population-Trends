@@ -24,7 +24,7 @@ const Prefectures: React.FC<PrefecturesProps> = ({ onChange }) => {
           `https://opendata.resas-portal.go.jp/api/v1/prefectures`,
           {
             headers: {
-              'X-API-KEY': process.env.RESAS_API_KEY || '',
+              'X-API-KEY': process.env.RESAS_API_KEY,
             },
           }
         );
