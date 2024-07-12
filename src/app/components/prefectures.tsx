@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import '@/app/styles/pref.css'; // スタイルシートのインポート
 import React from 'react';
-import {API_KEY} from "@/config";
+import {API_KEY} from "../config"
 //都道府県のコードと名前
 interface Prefecture {
   prefCode: number;
