@@ -20,7 +20,7 @@ export default function Home() {
                 return;
             }
             const response = await axios.get(`https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=${prefCode}`,
-                { headers: { 'X-API-KEY': process.env.API_KEY, } });
+                { headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_RESAS_API_KEY, } });
             setPrefectures([...prefectures,
             {
                 prefName: prefName,
