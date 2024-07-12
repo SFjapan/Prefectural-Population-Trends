@@ -14,7 +14,6 @@ interface PrefecturesProps {
 }
 
 const Prefectures: React.FC<PrefecturesProps> = ({ onChange }) => {
-  console.log(process.env.NEXT_PUBLIC_RESAS_API_KEY);
   const [prefs, setPrefs] = useState<Prefecture[]>([]);
 
   //都道府県一覧の取得
