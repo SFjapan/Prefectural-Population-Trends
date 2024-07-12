@@ -14,7 +14,7 @@ interface PrefecturesProps {
 }
 
 const Prefectures: React.FC<PrefecturesProps> = ({ onChange }) => {
-  console.log(process.env.NEXT_PUBLIC_RESAS_API_KEY);
+  console.log(process.env.API_KEY);
   const [prefs, setPrefs] = useState<Prefecture[]>([]);
 
   //都道府県一覧の取得
@@ -25,7 +25,7 @@ const Prefectures: React.FC<PrefecturesProps> = ({ onChange }) => {
           `https://opendata.resas-portal.go.jp/api/v1/prefectures`,
           {
             headers: {
-              'X-API-KEY': process.env.RESAS_API_KEY,
+              'X-API-KEY': process.env.API_KEY,
             },
           }
         );
